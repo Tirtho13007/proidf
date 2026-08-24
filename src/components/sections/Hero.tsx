@@ -1,157 +1,98 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Button } from "../ui/Button";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Button } from '../ui/Button';
 
 export function Hero() {
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
-    },
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 }
+    }
   };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-    },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 lg:pt-24 lg:pb-12 overflow-hidden bg-pro-white">
-      {/* Background subtleties */}
+    <section className="relative min-h-[90vh] md:min-h-[100vh] flex items-center pt-24 pb-12 lg:pt-24 lg:pb-12 overflow-hidden bg-[#F8FAFC]">
+      {/* Immersive Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[50vw] h-[100vh] bg-gradient-to-bl from-pro-accent/40 to-transparent rounded-bl-full opacity-50 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-pro-border to-transparent" />
+        <div className="absolute top-0 right-0 w-[80vw] md:w-[60vw] h-[100vh] bg-gradient-to-bl from-pro-israel/10 via-transparent to-transparent opacity-80 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-pro-border/80 to-transparent" />
       </div>
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Content */}
-          <motion.div
-            className="lg:col-span-6 flex flex-col items-start"
+
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 md:px-12 w-full relative z-10 mt-6 md:mt-8 lg:mt-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+          
+          {/* Left Content inside a subtle Liquid Glass Container */}
+          <motion.div 
+            className="order-last lg:order-first lg:col-span-7 flex flex-col items-center sm:items-start text-center sm:text-left bg-white/50 backdrop-blur-xl border border-white/80 shadow-[0_20px_40px_rgba(0,0,0,0.04)] p-6 sm:p-8 md:p-10 rounded-[28px] md:rounded-[36px] relative overflow-hidden w-full"
             variants={container}
             initial="hidden"
             animate="show"
           >
-            <motion.div
-              variants={item}
-              className="mb-6 md:mb-8 flex items-center gap-4"
-            >
-              <div className="w-12 h-8 bg-white border border-pro-border shadow-sm flex flex-col justify-between py-1 relative">
-                <div className="w-full h-1 bg-pro-israel"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#0038B8"
-                    strokeWidth="1.5"
-                    className="w-3.5 h-3.5"
-                  >
-                    <polygon points="12,4 19,16 5,16" />
-                    <polygon points="12,20 5,8 19,8" />
-                  </svg>
-                </div>
-                <div className="w-full h-1 bg-pro-israel"></div>
-              </div>
-              <span className="text-xs font-bold tracking-widest uppercase text-pro-muted">
-                Independent Asset
-              </span>
-            </motion.div>
+            {/* Liquid shine effect */}
+            <div className="absolute top-0 left-0 w-full h-[40%] bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
 
-            <motion.h1
-              variants={item}
-              className="text-[12vw] sm:text-[10vw] md:text-7xl lg:text-[100px] font-heading font-bold tracking-normal text-[#071A3A] mb-4 leading-[0.95] md:leading-[0.9]"
-            >
-              <span className="text-pro-israel">PRO</span>IDF.COM
+            <motion.div variants={item} className="mb-4 flex items-center gap-3 relative z-10">
+              <span className="w-2 h-2 rounded-full bg-pro-israel animate-pulse" />
+              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase text-pro-navy">PREMIUM .COM ASSET</span>
+            </motion.div>
+            
+            <motion.h1 variants={item} className="text-[44px] min-[375px]:text-[48px] sm:text-6xl md:text-[76px] lg:text-[88px] font-heading font-bold tracking-tight text-pro-navy mb-4 leading-[1.1] sm:leading-[1.05] relative z-10 w-full whitespace-nowrap">
+              ProIDF<span className="text-pro-muted font-medium">.com</span>
             </motion.h1>
-
-            <motion.p
-              variants={item}
-              className="text-lg sm:text-xl md:text-[22px] text-[#07111F] font-semibold mb-4 md:mb-5 leading-[1.35] max-w-xl"
-            >
-              A Powerful Name for the Next Generation of Pro-Israel Media &
-              Digital Publishing.
+            
+            <motion.p variants={item} className="text-base sm:text-xl md:text-2xl text-[#07111F] font-semibold mb-3 sm:mb-4 leading-[1.35] max-w-xl relative z-10">
+              A Powerful Name for Pro-Israel Media & Digital Publishing.
             </motion.p>
-
-            <motion.p
-              variants={item}
-              className="text-[15px] md:text-base text-[#526173] font-medium mb-8 md:mb-10 max-w-md leading-relaxed"
-            >
-              A premium .com domain designed for ambitious media platforms,
-              publishers, creators, and creative agencies.
+            
+            <motion.p variants={item} className="text-sm sm:text-base md:text-[17px] text-[#526173] font-medium mb-8 max-w-lg leading-relaxed relative z-10">
+              A premium .com domain designed for news, media, digital publishing, podcasts, video and independent platforms.
             </motion.p>
-
-            <motion.div
-              variants={item}
-              className="mb-8 md:mb-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-5 sm:p-6 bg-[#F8FAFC] border border-pro-border/80 rounded-[20px] w-full max-w-md shadow-sm"
-            >
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#7A8798] mb-1.5">
-                  Asking Price
-                </p>
-                <p className="text-3xl font-extrabold text-[#071A3A] tracking-tight">
-                  €25,000
-                </p>
-              </div>
-              <div className="hidden sm:block w-px h-12 bg-pro-border/80"></div>
-              <div className="flex-1">
-                <p className="text-[13px] text-[#526173] font-medium leading-snug">
-                  Private acquisition opportunity for a serious buyer.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={item}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto"
-            >
-              <Button
-                variant="primary"
-                showArrow
-                href="#contact"
-                className="w-full sm:w-auto justify-center text-[15px]"
-              >
-                Inquire About ProIDF.com
+            
+            <motion.div variants={item} className="flex flex-col sm:flex-row gap-3 w-full relative z-10">
+              <Button variant="primary" showArrow href="#contact" className="w-full sm:w-auto justify-center text-[14px] md:text-[15px] font-semibold py-3 sm:py-2.5 shadow-md">
+                Request Acquisition Details
               </Button>
-              <Button
-                variant="secondary"
-                href="#potential"
-                className="w-full sm:w-auto justify-center text-[15px]"
-              >
+              <Button variant="secondary" href="#potential" className="w-full sm:w-auto justify-center text-[14px] md:text-[15px] font-semibold py-3 sm:py-2.5 bg-white/80 backdrop-blur-sm border-white">
                 Explore Brand Potential
               </Button>
             </motion.div>
           </motion.div>
-
-          {/* Right Visual */}
-          <motion.div
-            className="lg:col-span-6 lg:col-start-7 relative"
-            initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          
+          {/* Right Visual - Premium Full-Bleed Flag */}
+          <motion.div 
+            className="order-first lg:order-last lg:col-span-5 relative w-full flex justify-center mt-2 mb-6 lg:mt-0 lg:mb-0"
+            initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="relative aspect-[3/4] md:aspect-square lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-pro-navy/10 border border-pro-border/50 group">
-              <div className="absolute inset-0 bg-pro-navy/5 mix-blend-multiply z-10 group-hover:bg-transparent transition-colors duration-700" />
-              <img
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-                alt="Premium digital media environment"
-                className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
+            <div className="relative w-full aspect-[3/2] sm:aspect-video md:aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_40px_80px_rgba(7,26,58,0.15)] border-[6px] border-white group mx-auto max-w-[400px] lg:max-w-none bg-white p-4 md:p-8 flex items-center justify-center">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg" 
+                alt="Flag of Israel" 
+                className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-[5s] ease-out drop-shadow-sm"
               />
-              <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-pro-navy/60 to-transparent z-20" />
-              <div className="absolute bottom-6 left-6 z-30">
-                <div className="w-12 h-12 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center">
-                  <div className="w-4 h-4 bg-white/90 rounded-sm shadow-sm" />
-                </div>
+              
+              {/* Premium overlays (lightened to keep flag visible) */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0038B8]/5 via-transparent to-black/5 pointer-events-none transition-opacity duration-700 group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none opacity-50" />
+
+              {/* Official Asset Indicator - Moved to a pill to avoid obscuring the flag */}
+              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 flex items-center gap-2 bg-white/95 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg border border-black/5">
+                 <div className="w-2 h-2 rounded-full bg-pro-israel animate-pulse shadow-[0_0_8px_#0038B8]" />
+                 <p className="text-pro-navy font-bold tracking-[0.2em] text-[9px] md:text-[10px] uppercase">Premium Asset</p>
               </div>
             </div>
-
-            {/* Subtle graphic accent */}
-            <div className="absolute -right-8 -top-8 w-32 h-32 border border-pro-israel/20 rounded-full opacity-50 hidden md:block" />
-            <div className="absolute -left-6 bottom-1/4 w-12 h-12 bg-pro-accent rounded-full opacity-60 mix-blend-multiply hidden md:block" />
+            
+            {/* Abstract accents */}
+            <div className="absolute -right-12 -top-12 w-64 h-64 border-[1px] border-pro-israel/20 rounded-full opacity-60 z-0 hidden lg:block pointer-events-none" />
           </motion.div>
+          
         </div>
       </div>
     </section>

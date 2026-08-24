@@ -1,69 +1,42 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { Shield } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-pro-white border-t border-pro-border pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-          <div className="md:col-span-5 lg:col-span-4">
-            <div className="text-3xl font-heading tracking-normal text-pro-navy mb-4 flex items-center gap-1">
-              <span className="font-bold text-pro-israel">PRO</span>
-              <span className="font-bold">IDF</span>
-              <span className="text-pro-muted font-normal">.COM</span>
+    <footer className="bg-pro-navy text-white pt-20 pb-10 border-t border-white/10">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+        
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 mb-16">
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <Shield className="text-pro-israel" size={24} />
+              <span className="font-heading font-bold text-2xl tracking-tight">ProIDF<span className="text-white/50">.com</span></span>
             </div>
-            <p className="text-pro-muted text-sm font-medium mb-8 leading-relaxed max-w-sm">
-              A premium, independently owned digital asset ready for acquisition. Perfectly positioned for global media, news, and publishing.
-            </p>
-            <div className="flex flex-col gap-3">
-              <a href="tel:+4915211253707" className="text-[#071A3A] font-semibold hover:text-pro-israel transition-colors inline-flex items-center gap-2 w-fit bg-pro-soft px-4 py-2 rounded-full border border-pro-border/50 text-sm">
-                <span>Phone:</span> +49 1521 1253707
-              </a>
-              <a href="mailto:williambuffetjnr@gmail.com" className="text-[#071A3A] font-semibold hover:text-pro-israel transition-colors inline-flex items-center gap-2 w-fit bg-pro-soft px-4 py-2 rounded-full border border-pro-border/50 text-sm">
-                <span>Email:</span> williambuffetjnr@gmail.com
-              </a>
-            </div>
+            <p className="text-white/60 font-medium text-sm">Independent Premium Domain Asset</p>
           </div>
           
-          <div className="md:col-span-3 lg:col-start-7 lg:col-span-2">
-            <h4 className="text-sm font-bold text-pro-navy uppercase tracking-[0.15em] mb-6">Explore</h4>
-            <ul className="flex flex-col gap-4">
-              {['Meaning', 'Brand Potential', 'Use Cases'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-[#526173] font-medium hover:text-pro-israel transition-colors text-sm flex items-center gap-2 group">
-                    <span className="w-0 h-px bg-pro-israel transition-all duration-300 group-hover:w-3"></span>
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="text-left md:text-right">
+            <div className="mb-2">
+              <p className="text-[10px] font-bold tracking-[0.15em] text-white/40 uppercase mb-1">Phone</p>
+              <a href="tel:+4915211253707" className="text-white hover:text-pro-israel transition-colors font-medium">
+                +49 1521 1253707
+              </a>
+            </div>
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.15em] text-white/40 uppercase mb-1">Email</p>
+              <a href="mailto:williambuffetjnr@gmail.com" className="text-white hover:text-pro-israel transition-colors font-medium">
+                williambuffetjnr@gmail.com
+              </a>
+            </div>
           </div>
+        </div>
 
-          <div className="md:col-span-4 lg:col-span-3">
-            <h4 className="text-sm font-bold text-pro-navy uppercase tracking-[0.15em] mb-6">Acquisition</h4>
-            <ul className="flex flex-col gap-4">
-              {['Contact', 'FAQ'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-[#526173] font-medium hover:text-pro-israel transition-colors text-sm flex items-center gap-2 group">
-                    <span className="w-0 h-px bg-pro-israel transition-all duration-300 group-hover:w-3"></span>
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        
-        <div className="border-t border-pro-border/80 pt-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-          <p className="text-sm text-[#7A8798] order-2 lg:order-1 font-medium">
-            © {new Date().getFullYear()} ProIDF.com. All rights reserved.
+        <div className="pt-8 border-t border-white/10">
+          <p className="text-white/40 text-[13px] leading-relaxed max-w-4xl font-medium">
+            <strong className="text-white/60">Independent brand notice:</strong> ProIDF.com is an independently owned domain and independent brand concept. It is not affiliated with, operated by, sponsored by, or officially endorsed by the Israel Defense Forces, the Government of Israel, or any government organization.
           </p>
-          <div className="order-1 lg:order-2 bg-[#F8FAFC] px-5 py-4 rounded-xl border border-pro-border/60 max-w-2xl">
-            <p className="text-[12px] text-[#526173] leading-relaxed">
-              <strong className="text-[#071A3A] font-bold">Independent Brand Notice:</strong> ProIDF.com is independently owned and is not affiliated with, operated by, sponsored by, or endorsed by the Israel Defense Forces or any government organization.
-            </p>
-          </div>
         </div>
+
       </div>
     </footer>
   );

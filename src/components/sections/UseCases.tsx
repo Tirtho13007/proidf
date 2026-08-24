@@ -1,114 +1,60 @@
-import React from "react";
-import { Section } from "../layout/Section";
-import { motion } from "framer-motion";
-import {
-  Newspaper,
-  Mic,
-  Tv,
-  Globe,
-  Briefcase,
-  MonitorPlay,
-} from "lucide-react";
+import React from 'react';
+import { Section } from '../layout/Section';
+import { motion } from 'framer-motion';
+import { 
+  FileText, Globe, Tv, Mic, Mail, BookOpen, 
+  MessageSquare, LayoutDashboard, PenTool, 
+  Users, BarChart3, Radio
+} from 'lucide-react';
 
 export function UseCases() {
   const cases = [
-    {
-      title: "Digital News",
-      icon: <Newspaper size={24} className="text-pro-israel" />,
-    },
-    {
-      title: "Podcast Network",
-      icon: <Mic size={24} className="text-pro-israel" />,
-    },
-    {
-      title: "Video Channel",
-      icon: <Tv size={24} className="text-pro-israel" />,
-    },
-    {
-      title: "Global Platform",
-      icon: <Globe size={24} className="text-pro-israel" />,
-    },
-    {
-      title: "Digital Agency",
-      icon: <Briefcase size={24} className="text-pro-israel" />,
-    },
-    {
-      title: "Media Hub",
-      icon: <MonitorPlay size={24} className="text-pro-israel" />,
-    },
+    { title: "News", icon: <FileText size={20} strokeWidth={1.5} /> },
+    { title: "Media", icon: <Globe size={20} strokeWidth={1.5} /> },
+    { title: "TV", icon: <Tv size={20} strokeWidth={1.5} /> },
+    { title: "Podcast", icon: <Mic size={20} strokeWidth={1.5} /> },
+    { title: "Newsletter", icon: <Mail size={20} strokeWidth={1.5} /> },
+    { title: "Publishing", icon: <BookOpen size={20} strokeWidth={1.5} /> },
+    { title: "Commentary", icon: <MessageSquare size={20} strokeWidth={1.5} /> },
+    { title: "Digital Platform", icon: <LayoutDashboard size={20} strokeWidth={1.5} /> },
+    { title: "Content Studio", icon: <PenTool size={20} strokeWidth={1.5} /> },
+    { title: "Creator Network", icon: <Users size={20} strokeWidth={1.5} /> },
+    { title: "Research & Analysis", icon: <BarChart3 size={20} strokeWidth={1.5} /> },
+    { title: "International Media", icon: <Radio size={20} strokeWidth={1.5} /> }
   ];
 
   return (
-    <Section id="uses" className="bg-[#F8FAFC] py-16 md:py-32 relative">
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-40 w-[500px] h-[500px] bg-pro-israel/10 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-1/4 -right-40 w-[500px] h-[500px] bg-[#071A3A]/5 rounded-full blur-[100px]"></div>
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="mb-16 text-center">
-          <motion.h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-pro-navy mb-6 leading-tight tracking-normal whitespace-normal md:whitespace-nowrap"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+    <Section id="use-cases" className="bg-pro-white py-12 sm:py-16 md:py-24 border-y border-pro-border">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-8 md:mb-16"
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-[56px] font-heading font-bold text-pro-navy tracking-tight leading-[1.1]">
             What Can ProIDF.com Become?
-          </motion.h2>
-          <motion.p
-            className="text-pro-muted text-lg max-w-2xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            A versatile foundation for modern media. From global news platforms
-            to independent creator networks and creative agencies.
-          </motion.p>
-        </div>
+          </h2>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
-          {cases.map((useCase, i) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+          {cases.map((useCase, index) => (
             <motion.div
-              key={useCase.title}
-              className="bg-white/40 backdrop-blur-2xl border border-white/80 rounded-[2rem] p-6 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-white/70 hover:border-pro-israel/30 hover:shadow-[0_15px_40px_rgba(0,56,184,0.08)] transition-all duration-500 relative overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              whileHover={{
-                y: -6,
-                scale: 1.02,
-                rotateX: 2,
-                rotateY: -2,
-                boxShadow: "0 25px 50px -12px rgba(0, 56, 184, 0.25)",
-              }}
-              whileTap={{
-                scale: 0.96,
-                rotateX: 0,
-                rotateY: 0,
-                boxShadow: "0 10px 20px -5px rgba(0, 56, 184, 0.15)",
-              }}
+              transition={{ delay: index * 0.03, duration: 0.4 }}
+              whileHover={{ y: -2, borderColor: "rgba(0, 56, 184, 0.3)", backgroundColor: "#F8FAFC" }}
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 p-4 sm:p-5 md:p-6 rounded-2xl border border-pro-border/60 bg-white transition-all duration-300 group"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <motion.div
-                className="mb-6 relative z-10 bg-white/90 p-4 rounded-2xl shadow-sm border border-white/50 group-hover:shadow-md transition-shadow duration-300 group-hover:scale-110 transform"
-                initial={{ scale: 0.5, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: i * 0.1 + 0.3,
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 15,
-                }}
-              >
+              <div className="text-pro-navy group-hover:text-pro-israel transition-colors">
                 {useCase.icon}
-              </motion.div>
-              <span className="text-[#071A3A] font-extrabold tracking-tight text-base md:text-lg relative z-10">
+              </div>
+              <h3 className="font-semibold text-pro-navy text-[14px] sm:text-[17px] leading-tight group-hover:text-pro-israel transition-colors">
                 {useCase.title}
-              </span>
+              </h3>
             </motion.div>
           ))}
         </div>
