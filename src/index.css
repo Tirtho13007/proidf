@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-heading: "Oswald", system-ui, sans-serif;
+  
+  --color-pro-white: #FFFFFF;
+  --color-pro-soft: #F8FAFC;
+  --color-pro-light: #F2F6FA;
+  --color-pro-israel: #0038B8;
+  --color-pro-blue: #1557C0;
+  --color-pro-navy: #071A3A;
+  --color-pro-text: #07111F;
+  --color-pro-muted: #526173;
+  --color-pro-border: #DCE4EE;
+  --color-pro-accent: #EAF2FF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  @media (pointer: fine) {
+    body, *, a, button {
+      cursor: none !important;
+    }
+  }
+  
+  body {
+    background-color: var(--color-pro-white);
+    color: var(--color-pro-text);
+  }
+
+  ::selection {
+    background-color: var(--color-pro-israel);
+    color: var(--color-pro-white);
+  }
+}
