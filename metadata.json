@@ -1,0 +1,6 @@
+{
+  "name": "ProIDF",
+  "description": "A premium digital asset presentation and acquisition website for the domain ProIDF.com.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
